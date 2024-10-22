@@ -5,13 +5,11 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
+/* Enforce Light Mode Appearance */
+html, body {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Dark text for readability */
   font-family: 'Times New Roman', serif;
-  background-color: #f0f0f0;
-}
-
-body {
   background-image: url('images/background.jpg');
   background-size: cover;
   background-position: center;
@@ -87,7 +85,7 @@ header {
 /* Milestone Section */
 .milestone {
   padding: 50px 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+  background-color: rgba(255, 255, 255, 0.8); /* Ensure light background */
   text-align: center;
   backdrop-filter: blur(10px); /* Adds a blur effect */
   border-radius: 15px;
@@ -98,22 +96,21 @@ header {
 .milestone-content h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  color:black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: black;
 }
 
 .milestone-message {
   font-size: 1.2rem;
   line-height: 1.6;
-  color:black;
-  font-family:'Times New Roman', Times, serif;
-  font-weight:bold;
-  text-align:center;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
   padding: 20px;
-  background: #fdfdfd;
+  background: #fdfdfd; /* Light background */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
 }
 
 /* Acknowledgments Section */
@@ -135,7 +132,7 @@ header {
 }
 
 .card {
-  background: white;
+  background: white; /* Ensure light background */
   padding: 20px;
   border-radius: 8px;
   width: 250px;
@@ -201,5 +198,13 @@ header {
 
   .photo-gallery img {
     width: 80%;
+  }
+}
+
+/* Override Dark Mode */
+@media (prefers-color-scheme: dark) {
+  html, body, .milestone, .milestone-message, .card, .content, .acknowledgments {
+    background-color: #ffffff !important; /* Force light background */
+    color: #000000 !important; /* Force dark text */
   }
 }
